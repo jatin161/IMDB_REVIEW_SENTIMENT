@@ -1,8 +1,10 @@
 import streamlit as st
-from textblob import TextBlob
+# from textblob import TextBlob
 import pandas as pd
 import altair as alt
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+import algo
 
 
 # Fxn
@@ -69,12 +71,12 @@ def main():
                 else:
                     st.markdown("Sentiment:: Neutral 😐 ")
 
-                # Dataframe
+                #Dataframe
                 result_df = convert_to_df(sentiment)
                 result_df.columns = [str(i).title() for i in result_df.columns]
                 st.dataframe(result_df)
 
-                # Visualization
+                #Visualization
                 c = alt.Chart(result_df).mark_bar().encode(
                     x='Metric',
                     y='Value',

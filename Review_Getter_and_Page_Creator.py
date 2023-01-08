@@ -1,8 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from textblob import TextBlob
-from PIL import Image
-import text2emotion as te
 import plotly.graph_objects as go
 import requests
 import json
@@ -170,18 +167,8 @@ def process(movieName, packageName):
 
 
 def applyModal(movie, packageName):
-    if (packageName == "TextBlob"):
-        predictionList = [algo.textBlob(review) for review in movie["reviews"]]
-        valueCounts = dict(pd.Series(predictionList).value_counts())
-        print(valueCounts)
-        return valueCounts
-    elif (packageName == "Vader"):
+    if (packageName == "Vader"):
         predictionList = [algo.vader(review) for review in movie["reviews"]]
-        valueCounts = dict(pd.Series(predictionList).value_counts())
-        print(valueCounts)
-        return valueCounts
-    elif (packageName == "Text2emotion"):
-        predictionList = [algo.text2emotion(review) for review in movie["reviews"]]
         valueCounts = dict(pd.Series(predictionList).value_counts())
         print(valueCounts)
         return valueCounts
