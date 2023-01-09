@@ -7,7 +7,7 @@ import algo
 import pandas as pd
 
 baseURL = 'https://imdb-api.com/en/API'
-apiKey = 'k_g6gngg9h'
+apiKey = 'k_pqqtwryw'
 getEmoji = {
     "happy": "😊",
     "neutral": "😐",
