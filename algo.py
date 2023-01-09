@@ -4,10 +4,7 @@ import nltk
 
 nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import text2emotion as te
-from fer import FER
 import matplotlib.pyplot as plt
-import cv2
 import numpy as np
 
 """
